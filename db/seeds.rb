@@ -11,10 +11,10 @@ User.create!([
   ])
   
   Post.create!([
-  {title: "Hello2", text: "This is my second post", comments_counter: nil, likes_counter: nil, author_id: 1},
-  {title: "Hello3", text: "This is my Third post", comments_counter: nil, likes_counter: nil, author_id: 1},
-  {title: "Hello4", text: "This is my fourth post", comments_counter: nil, likes_counter: nil, author_id: 1},
-  {title: "Hello", text: "This is my first post", comments_counter: 6, likes_counter: nil, author_id: 1}
+  {author: User.first,title: "Hello2", text: "This is my second post", comments_counter: nil, likes_counter: nil },
+  {author: User.first, title: "Hello3", text: "This is my Third post", comments_counter: nil, likes_counter: nil },
+  {author: User.find(2),title: "Hello4", text: "This is my fourth post", comments_counter: nil, likes_counter: nil},
+  {author: User.find(2),title: "Hello", text: "This is my first post", comments_counter: nil, likes_counter: nil}
   ]),
   
   Comment.create!([
