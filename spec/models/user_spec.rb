@@ -2,47 +2,47 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
-  subject { User.new(name: 'Saied', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'developer') }
+  subject { User.new(name: 'v', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'developer') }
   before { subject }
 
-  it "name is nil or blank" do
+  it 'name is nil or blank' do
     test_case = subject
     test_case.name = nil
     expect(test_case).to_not be_valid
-    test_case.name = ""
+    test_case.name = ''
     expect(test_case).to_not be_valid
   end
-  it "name is less than length of 3" do
+  it 'name is less than length of 3' do
     test_case = subject
-    test_case.name = "sa"
+    test_case.name = 'sa'
     expect(test_case).to_not be_valid
   end
-  it "name is longer than length of 32" do
+  it 'name is longer than length of 32' do
     test_case = subject
-    test_case.name = "a" * 33
+    test_case.name = 'a' * 33
     expect(test_case).to_not be_valid
   end
-  it "name is not string" do
+  it 'name is not string' do
     test_case = subject
     test_case.name = 5
     expect(test_case).to_not be_valid
   end
-  it "photo url is less than length of 20" do
+  it 'photo url is less than length of 20' do
     test_case = subject
-    test_case.photo = "s" * 19
+    test_case.photo = 's' * 19
     expect(test_case).to_not be_valid
   end
-  it "photo url is longer than length of 2000" do
+  it 'photo url is longer than length of 2000' do
     test_case = subject
-    test_case.photo = "a" * 2001
+    test_case.photo = 'a' * 2001
     expect(test_case).to_not be_valid
   end
-  it "photo url is not string" do
+  it 'photo url is not string' do
     test_case = subject
     test_case.photo = 5
     expect(test_case).to_not be_valid
   end
-  it "posts counter is greater than or equal zero" do
+  it 'posts counter is greater than or equal zero' do
     test_case = subject
     test_case.posts_counter = -1
     expect(test_case).to_not be_valid
@@ -51,13 +51,13 @@ RSpec.describe User, type: :model do
     test_case.posts_counter = 1
     expect(test_case).to be_valid
   end
-  it "posts counter is not number" do
+  it 'posts counter is not number' do
     test_case = subject
-    test_case.posts_counter = "hi"
+    test_case.posts_counter = 'hi'
     expect(test_case).to_not be_valid
   end
 
-  it "get the recent 3 posts" do
+  it 'get the recent 3 posts' do
     test_case = subject
     Post.create(author: test_case, title: 'title', text: 'text')
     Post.create(author: test_case, title: 'title', text: 'text')
