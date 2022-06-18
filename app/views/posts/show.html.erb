@@ -5,6 +5,8 @@
 	<title>specific post</title>
 </head>
 <body>
-  <h1>Here are information about specific post</h1>
+  <main id ="container">
+   <%= render partial: "post_information", locals: {post:@post}%>
+  </main> 
 </body>
 </html>
