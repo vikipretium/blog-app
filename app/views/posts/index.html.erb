@@ -5,6 +5,10 @@
 	<title>user's posts</title>
 </head>
 <body>
-  <h1>Here is a list of posts for a user</h1> 
+  <main id ="container"> 
+  <%= render partial:'users/user', locals:{user: @user} %>
+  <%= render @posts.limit(2)%>
+  <button id="show-posts">pagination</button>
+</main>   
 </body>
 </html>

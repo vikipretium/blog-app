@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
    end
  
    def all_posts
-    Post.all.where("author_id = #{params[:user_id]}")
+    User.find(params[:user_id])
    end  
 end

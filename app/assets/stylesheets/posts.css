@@ -1,0 +1,10 @@
+.comment-section {
+	width: 51.4%;
+	font-size: 18px;
+	border: 2px solid black;
+	padding: 1rem;
+}
+
+.comment {
+	margin-left: 0.25rem;
+} 

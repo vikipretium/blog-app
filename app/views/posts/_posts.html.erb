@@ -3,5 +3,8 @@
  <p><%=post.text%></p>
  <small>
     Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>       
-</small>
+</small> 
 </section>
+<section class="comment-section">
+   <%= render partial:'comments', as: 'comment', collection:post.comments%>
+</section>   
