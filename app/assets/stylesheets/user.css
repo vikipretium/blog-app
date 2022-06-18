@@ -19,7 +19,7 @@
    padding-top: 16px;
    font-weight: bold;
 }
-section {
+.user {
   width: 100%;
   display: flex;
   gap:  16px;

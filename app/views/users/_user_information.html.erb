@@ -1,0 +1,7 @@
+<section class="user-info">
+<h4>Post #<%=@user.recent_posts.index(post)+1%></h4>
+ <p><%=post.text%></p>
+ <small>
+    Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>       
+</small>
+</section>
