@@ -1,0 +1,6 @@
+<%=form_with model: [:user, post] do |form| %>
+  <%=label(:post,:title)%> 
+  <%=form.text_field :title%>
+  <%=label(:post,:description)%> 
+  <%=form.text_field :description%>
+<% end %> 
