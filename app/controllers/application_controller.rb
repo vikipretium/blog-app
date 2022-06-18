@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   end
 
   def all_users
-    User.all
+    User.all.order('id asc')
   end
 
   def current_post

@@ -9,9 +9,11 @@
   <%= render partial:'users/user', locals:{user: @user} %>
    <% @posts.each do |post| %>
   <%= render post%>
+  <%if post.recent_comments.length > 0 %>
    <section class="comment-section">
     <%= render partial:'comments', as: 'comment', collection:post.recent_comments%>
    </section>
+   <%end%>
    <%end%>
   <button id="show-posts">pagination</button>
 </main>     
