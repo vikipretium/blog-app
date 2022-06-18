@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:new, :create]
       resources :likes, only: [:create]
   end
+  end
   # Defines the root path route ("/")
   # root "articles#index"
 end
