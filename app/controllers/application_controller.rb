@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_post
-    User.find(params[:user_id]).posts.find(params[:id])
+    User.find(params[:user_id]).posts.find(params[:id] || params[:post_id])
   end
 
   def all_posts
