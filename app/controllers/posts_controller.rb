@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   end
   def create
     user = current_user
-    post = Post.new(params.require(:post).permit(:title,:text))
+    post = Post.new(post_params)
     post.author = user
       if post.save
         flash[:success] = "Post saved successfully"
@@ -23,4 +23,10 @@ class PostsController < ApplicationController
         redirect_to new_user_post_url
     end 
   end 
+  
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end

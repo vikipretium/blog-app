@@ -33,3 +33,15 @@ body {
 #red {
     color: red;
 }
+
+.create-comment,
+.add-like,
+.create-post {
+  border: 2px solid black;
+  border-bottom-width: 4px;
+  background: white;
+  font-weight: bold;
+  padding: 0.5rem 0.5rem;
+  font-size: 15px;
+  cursor: pointer;
+}
