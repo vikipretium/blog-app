@@ -1,6 +1,10 @@
-<%=form_with model: [:user, post] do |form| %>
-  <%=label(:post,:title)%> 
+<%=form_with model: [:user, post], method: :post, id: 'form' do |form| %>
+  <%=label(:post,:Title)%> 
   <%=form.text_field :title%>
-  <%=label(:post,:description)%> 
-  <%=form.text_field :description%>
-<% end %> 
+  <%=label(:post,:Topic)%> 
+  <%=form.text_area :text%>
+  <%=form.submit "Save" %>
+<% end %>
+<%flash.each do |_,msg|%>
+<%=msg%>
+<%end%>	 
