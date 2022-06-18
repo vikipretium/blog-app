@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   user = User.new(name: 'v', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'developer')
   post = Post.new(author: user, title: 'title', text: 'text')
-  subject { Comment.new(author: user, post: post, text: 'comment text') }
+  subject { Comment.new(author: user, post:, text: 'comment text') }
   before { subject }
 
   it 'author is nil' do
