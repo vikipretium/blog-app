@@ -5,7 +5,6 @@ class LikesController < ApplicationController
    post = current_post
    post.likes.where("author_id = #{user.id}").length.positive? &&
        return
-   )
    like = Like.new(author:user,post:post)
    return unless like.save
 

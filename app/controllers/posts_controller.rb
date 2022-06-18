@@ -19,10 +19,10 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     post.author = user
     if post.save
-      flash[:success] = "Post saved successfully"
+      flash[:success] = 'Post saved successfully'
       redirect_to user_posts_url
     else
-      flash[:error] = "Error: Post could not be saved"
+      flash[:error] = 'Error: Post could not be saved'
       redirect_to new_user_post_url
     end
   end
