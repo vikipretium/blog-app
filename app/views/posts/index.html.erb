@@ -10,7 +10,7 @@
   <%=link_to new_user_post_path do%>
    <button class="create-post">Create post</button>
   <%end%>
-   <% @posts.each do |post| %>
+   <% @posts.includes(:comments).each do |post| %>
   <%= render post%>
    <%if post.comments.length > 0 %>
    <section class="comment-section">

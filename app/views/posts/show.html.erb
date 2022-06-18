@@ -6,7 +6,7 @@
 </head>
 <body>
   <main id ="container">
-   <%= render partial: "post_information", locals: {post:@post}%>
+   <%= render partial: "post_information", locals: {post:@post,comments:@post.comments.includes(:author)}%>
   </main> 
 </body>
 </html>
