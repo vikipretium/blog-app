@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     User.find(params[:user_id]).posts.find(params[:id] || params[:post_id])
   end
 
-  def all_posts
+  def all_users_post_controller
     User.find(params[:user_id])
   end
 end
