@@ -7,8 +7,13 @@
 <body>
   <main id ="container"> 
   <%= render partial:'users/user', locals:{user: @user} %>
-  <%= render @posts.limit(2)%>
+   <% @posts.each do |post| %>
+  <%= render post%>
+   <section class="comment-section">
+    <%= render partial:'comments', as: 'comment', collection:post.recent_comments%>
+   </section>
+   <%end%>
   <button id="show-posts">pagination</button>
-</main>   
+</main>     
 </body>
 </html>
