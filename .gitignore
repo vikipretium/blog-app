@@ -7,6 +7,10 @@
 # ignore node modules
 node_modules/
 
+# ignroe vscode folders
+.history
+.vscode
+
 # Ignore bundler config.
 /.bundle
 
