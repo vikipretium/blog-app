@@ -58,7 +58,7 @@ gem 'rails-controller-testing'
 # seed dump
 gem 'seed_dump', '~> 3.2', '>= 3.2.4'
 
-# devise 
+# devise
 gem 'devise'
 
 group :development, :test do
