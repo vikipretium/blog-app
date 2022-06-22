@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
-  def current_user
-    User.find(params[:id] || params[:user_id])
-  end
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def all_users
     User.all.order('id asc')
@@ -13,5 +11,15 @@ class ApplicationController < ActionController::Base
 
   def all_users_post_controller
     User.find(params[:user_id])
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name photo bio])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name photo bio])
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+      user_params.permit(:username, :email)
+    end
   end
 end

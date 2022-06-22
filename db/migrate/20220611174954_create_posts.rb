@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration[7.0]
            
       t.timestamps
       t.bigint :comments_counter, null:false, default: 0
-      t.bigint :likes_counter, null:false, default: 
+      t.bigint :likes_counter, null:false, default: 0
     end
   end
 end
