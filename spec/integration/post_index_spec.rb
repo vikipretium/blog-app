@@ -81,4 +81,4 @@ RSpec.describe 'Posts index page', type: :feature do
     click_link('test_1')
     expect(current_path).to eq(user_post_path(@user1, @post1))
   end
-end 
+end

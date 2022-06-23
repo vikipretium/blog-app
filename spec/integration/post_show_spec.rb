@@ -62,4 +62,4 @@ RSpec.describe 'Posts show page', type: :feature do
     expect(page).to have_content('comment 3 from user 2')
     expect(page).to have_content('comment 4 from user 2')
   end
-end 
+end

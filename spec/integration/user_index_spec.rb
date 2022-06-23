@@ -45,4 +45,4 @@ RSpec.describe 'Users index page', type: :feature do
     click_link 'Anuar'
     expect(current_path).to eq(user_path(@user1))
   end
-end 
+end
