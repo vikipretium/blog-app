@@ -78,6 +78,6 @@ end
 gem 'cancancan'
 
 gem 'capybara'
+gem 'ffi'
 gem 'rails-controller-testing'
 gem 'rubocop-rails'
-gem 'ffi'
