@@ -81,3 +81,12 @@ gem 'capybara'
 gem 'ffi'
 gem 'rails-controller-testing'
 gem 'rubocop-rails'
+
+gem 'rswag'
+
+gem 'rswag-api'
+gem 'rswag-ui'
+
+group :development, :test do
+  gem 'rswag-specs'
+end
