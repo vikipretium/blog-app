@@ -3,14 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.3'
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+# Use sqlite3 as the database for Active Record
+# gem 'sqlite3', '~> 1.4'
+gem 'pg'
+
+# Use the devise gem as the session and account manager for the Application [https://github.com/heartcombo/devise]
+gem 'devise'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -28,13 +32,13 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+# gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem 'kredis'
+# gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem 'bcrypt', '~> 3.1.7'
+# gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
@@ -43,25 +47,13 @@ gem 'tzinfo-data'
 gem 'bootsnap', require: false
 
 # Use Sass to process CSS
-# gem 'sassc-rails'
+# gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem 'image_processing', '~> 1.2'
-
-# rubocop linter
-gem 'rubocop', '>= 1.0', '< 2.0'
-
-# Rspec
-# gem 'rspec-rails'
-gem 'rails-controller-testing'
-
-# seed dump
-gem 'seed_dump', '~> 3.2', '>= 3.2.4'
-
-# devise
-gem 'devise'
+# gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'rspec-rails', '~> 5.0.0'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
@@ -71,17 +63,21 @@ group :development do
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem 'rack-mini-profiler'
+  # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem 'spring'
+  # gem "spring"
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'ffi'
-  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem 'cancancan'
+
+gem 'capybara'
+gem 'ffi'
+gem 'rails-controller-testing'
+gem 'rubocop-rails'
